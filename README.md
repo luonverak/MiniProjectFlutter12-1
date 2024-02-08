@@ -1,0 +1,14 @@
+Product Model
+- id
+- name
+- rating
+- price
+- description
+- counter
+- favorite
+- image
+- category_id
+Category Model
+- id
+- name
+- image
