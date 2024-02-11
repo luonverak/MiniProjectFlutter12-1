@@ -39,7 +39,7 @@ class HeaderWidget extends StatelessWidget {
               trailing: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Colors.grey,
+                  color: Colors.grey[100],
                 ),
                 child: const Padding(
                   padding: EdgeInsets.all(5.0),

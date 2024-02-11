@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project1/widget/category.dart';
+import 'package:project1/widget/flash_sale.dart';
 import '../widget/header.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,11 +9,32 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.grey[100],
       body: SingleChildScrollView(
         child: Column(
           children: [
-            HeaderWidget(),
+            const HeaderWidget(),
+            const SizedBox(height: 10),
+            Container(
+              width: double.infinity,
+              height: 500,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  topRight: Radius.circular(10),
+                ),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Categories(),
+                    FlashSale(),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),
