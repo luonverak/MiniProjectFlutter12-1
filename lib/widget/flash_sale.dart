@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project1/model/product_model.dart';
 
 class FlashSale extends StatelessWidget {
   const FlashSale({super.key});
@@ -50,7 +51,7 @@ class FlashSale extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              for (int i = 0; i < 10; i++)
+              for (int i = 0; i < listProduct.length; i++)
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SizedBox(
@@ -62,32 +63,32 @@ class FlashSale extends StatelessWidget {
                           width: 180,
                           height: 200,
                           decoration: BoxDecoration(
-                            color: Colors.amber,
+                            color: Colors.grey[200],
                             borderRadius: BorderRadius.circular(10),
-                            image: const DecorationImage(
-                              image: NetworkImage(
-                                  'https://ik.imagekit.io/3dqckpw4d/upload/iphone_12___Purple1657182290iphone-12-purple.png'),
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(listProduct[i].image),
                             ),
                           ),
                         ),
-                        const Text(
-                          'iPhone 15 Por Max ',
-                          style: TextStyle(fontSize: 18),
+                        Text(
+                          listProduct[i].name,
+                          style: const TextStyle(fontSize: 18),
                           maxLines: 1,
                         ),
-                        const Row(
+                        Row(
                           children: [
                             Text(
-                              '\$ 798.00',
-                              style: TextStyle(
+                              '\$ ${listProduct[i].discountPrice}',
+                              style: const TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Text(
-                              '\$ 899.99',
-                              style: TextStyle(
+                              '\$ ${listProduct[i].price}',
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.grey,

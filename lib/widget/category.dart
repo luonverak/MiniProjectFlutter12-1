@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../model/category_model.dart';
+
 class Categories extends StatelessWidget {
   const Categories({super.key});
 
@@ -38,7 +40,7 @@ class Categories extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              for (int i = 0; i < 10; i++)
+              for (int i = 0; i < listCategory.length; i++)
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
@@ -49,13 +51,12 @@ class Categories extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(100),
-                          image: const DecorationImage(
-                            image: NetworkImage(
-                                'https://ik.imagekit.io/3dqckpw4d/upload/iphone_12___Purple1657182290iphone-12-purple.png'),
+                          image: DecorationImage(
+                            image: NetworkImage(listCategory[i].image),
                           ),
                         ),
                       ),
-                      const Text('iPhone')
+                      Text(listCategory[i].name)
                     ],
                   ),
                 ),
